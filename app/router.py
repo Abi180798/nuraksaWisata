@@ -1,4 +1,5 @@
-from app.Users.router import user_router
+
+from app.Wisata.router import wisataRouter
 from app import app
 
-app.include_router(user_router, prefix="/users")
+app.include_router(wisataRouter, prefix="/wisata")

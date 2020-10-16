@@ -11,6 +11,8 @@ class BaseResponse(BaseModel):
 
     def success(self):
         self.filed = False
+        self.message = "success get data"
+        self.status_code = status.HTTP_200_OK
     
     def created(self):
         self.success()

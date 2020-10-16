@@ -1,1 +1,2 @@
-from app.Users.models import Users
+
+from app.Wisata.models import Wisata
