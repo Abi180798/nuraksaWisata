@@ -90,11 +90,10 @@ async def getPhot(
     photo_name : str
     ):
     try:
-        image = cv2.imread(os.path.join(FOTO_DIR, photo_name))
-        if image is None:
+        image_result = open(os.path.join(FOTO_DIR, photo_name), "rb")
+        if image_result is None:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="image not found")
         file_format = photo_name.split(".")[1]
-        res, img = cv2.imencode(".{}".format(file_format), image)
-        return StreamingResponse(io.BytesIO(img.tobytes()), media_type="image/{}".format(file_format))
+        return StreamingResponse(io.BytesIO(image_result.read()), media_type="image/{}".format(file_format))
     except Exception as e:
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
