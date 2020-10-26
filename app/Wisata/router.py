@@ -5,7 +5,7 @@ from .models import Wisata,session
 from .schemas import *
 from app.Auth.auth import get_current_superadmin, get_current_admin
 
-import os, io, cv2
+import os, io
 from starlette.responses import StreamingResponse
 
 ALOWRD_FILE = ['png', 'jpg', 'jpeg']
