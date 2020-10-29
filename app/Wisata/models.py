@@ -12,8 +12,8 @@ class Wisata(Base):
   deskripsi_wisata = Column(Text, default="")
   gambar_wisata = Column(String, default="")
   kategori = Column(String, nullable=False, default="")
-  latitude = Column(BigInteger, nullable=False, default=0)
-  longitude = Column(BigInteger, nullable=False, default=0)
+  latitude = Column(Float, nullable=False, default=0)
+  longitude = Column(Float, nullable=False, default=0)
 
   @staticmethod
   def fromModel(wisata : WisataModel):
