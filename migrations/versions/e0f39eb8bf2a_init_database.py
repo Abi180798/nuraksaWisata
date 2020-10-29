@@ -1,8 +1,8 @@
 """init database
 
-Revision ID: 37085b5c6857
+Revision ID: e0f39eb8bf2a
 Revises: 
-Create Date: 2020-10-16 23:35:27.842295
+Create Date: 2020-10-29 14:40:22.751070
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '37085b5c6857'
+revision = 'e0f39eb8bf2a'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -25,8 +25,8 @@ def upgrade():
     sa.Column('deskripsi_wisata', sa.Text(), nullable=True),
     sa.Column('gambar_wisata', sa.String(), nullable=True),
     sa.Column('kategori', sa.String(), nullable=False),
-    sa.Column('latitude', sa.BigInteger(), nullable=False),
-    sa.Column('longitude', sa.BigInteger(), nullable=False),
+    sa.Column('latitude', sa.Float(), nullable=False),
+    sa.Column('longitude', sa.Float(), nullable=False),
     sa.PrimaryKeyConstraint('id_wisata')
     )
     op.create_index(op.f('ix_wisata_id_wisata'), 'wisata', ['id_wisata'], unique=False)
