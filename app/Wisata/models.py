@@ -21,6 +21,7 @@ class Wisata(Base):
       nama_wisata = wisata.nama_wisata,
       alamat_wisata = wisata.alamat_wisata,
       deskripsi_wisata = wisata.deskripsi_wisata,
+      gambar_wisata = wisata.gambar_wisata,
       kategori = wisata.kategori,
       latitude = wisata.latitude,
       longitude = wisata.longitude
